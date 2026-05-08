@@ -78,29 +78,49 @@ export default function PlanoCartesiano() {
             className="stroke-slate-500"
             strokeWidth={1.5}
           />
-          {/* Etiquetas de ejes */}
-          {[-5, 5].map((v) => (
-            <g key={`lx${v}`}>
+          {/* Etiquetas numéricas de los ejes */}
+          {[-8, -6, -4, -2, 2, 4, 6, 8].map((v) => (
+            <g key={`tick-${v}`}>
               <text
                 x={xPx(v)}
-                y={yPx(0) + 14}
+                y={yPx(0) + 12}
                 textAnchor="middle"
-                className="fill-current text-slate-500"
-                fontSize="10"
+                className="fill-slate-500 dark:fill-slate-400"
+                fontSize="9"
               >
                 {v}
               </text>
               <text
                 x={xPx(0) - 6}
-                y={yPx(v) + 4}
+                y={yPx(v) + 3}
                 textAnchor="end"
-                className="fill-current text-slate-500"
-                fontSize="10"
+                className="fill-slate-500 dark:fill-slate-400"
+                fontSize="9"
               >
                 {v}
               </text>
             </g>
           ))}
+          {/* Letras de los ejes */}
+          <text
+            x={size - 4}
+            y={yPx(0) - 6}
+            textAnchor="end"
+            className="fill-slate-600 dark:fill-slate-300 italic"
+            fontSize="11"
+            fontWeight="600"
+          >
+            x
+          </text>
+          <text
+            x={xPx(0) + 8}
+            y={12}
+            className="fill-slate-600 dark:fill-slate-300 italic"
+            fontSize="11"
+            fontWeight="600"
+          >
+            y
+          </text>
           {/* Punto */}
           <line
             x1={xPx(0)}

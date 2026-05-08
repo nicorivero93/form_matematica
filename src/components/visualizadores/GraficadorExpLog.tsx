@@ -48,6 +48,49 @@ export default function GraficadorExpLog() {
           ))}
           <line x1={xPx(min)} y1={yPx(0)} x2={xPx(max)} y2={yPx(0)} className="stroke-slate-500" strokeWidth={1.5} />
           <line x1={xPx(0)} y1={yPx(min)} x2={xPx(0)} y2={yPx(max)} className="stroke-slate-500" strokeWidth={1.5} />
+          {/* Etiquetas numéricas de los ejes */}
+          {[-6, -4, -2, 2, 4, 6].map((v) => (
+            <g key={`tick-${v}`}>
+              <text
+                x={xPx(v)}
+                y={yPx(0) + 12}
+                textAnchor="middle"
+                className="fill-slate-500 dark:fill-slate-400"
+                fontSize="9"
+              >
+                {v}
+              </text>
+              <text
+                x={xPx(0) - 6}
+                y={yPx(v) + 3}
+                textAnchor="end"
+                className="fill-slate-500 dark:fill-slate-400"
+                fontSize="9"
+              >
+                {v}
+              </text>
+            </g>
+          ))}
+          {/* Letras de los ejes */}
+          <text
+            x={size - 4}
+            y={yPx(0) - 6}
+            textAnchor="end"
+            className="fill-slate-600 dark:fill-slate-300 italic"
+            fontSize="11"
+            fontWeight="600"
+          >
+            x
+          </text>
+          <text
+            x={xPx(0) + 8}
+            y={12}
+            className="fill-slate-600 dark:fill-slate-300 italic"
+            fontSize="11"
+            fontWeight="600"
+          >
+            y
+          </text>
           <path d={path} className="stroke-amber-500" strokeWidth={2.5} fill="none" />
         </svg>
       </div>

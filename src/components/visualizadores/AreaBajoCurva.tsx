@@ -51,6 +51,52 @@ export default function AreaBajoCurva() {
           {/* Grilla */}
           <line x1={xPx(min)} y1={yPx(0)} x2={xPx(max)} y2={yPx(0)} className="stroke-slate-500" strokeWidth={1.5} />
           <line x1={xPx(0)} y1={yPx(yMin)} x2={xPx(0)} y2={yPx(yMax)} className="stroke-slate-500" strokeWidth={1.5} />
+          {/* Etiquetas numéricas — eje x */}
+          {[-3, -2, -1, 1, 2, 3, 4, 5].map((v) => (
+            <text
+              key={`xtick-${v}`}
+              x={xPx(v)}
+              y={yPx(0) + 12}
+              textAnchor="middle"
+              className="fill-slate-500 dark:fill-slate-400"
+              fontSize="9"
+            >
+              {v}
+            </text>
+          ))}
+          {/* Etiquetas numéricas — eje y */}
+          {[2, 4, 6, 8, 10, 12].map((v) => (
+            <text
+              key={`ytick-${v}`}
+              x={xPx(0) - 6}
+              y={yPx(v) + 3}
+              textAnchor="end"
+              className="fill-slate-500 dark:fill-slate-400"
+              fontSize="9"
+            >
+              {v}
+            </text>
+          ))}
+          {/* Letras de los ejes */}
+          <text
+            x={size - 4}
+            y={yPx(0) - 6}
+            textAnchor="end"
+            className="fill-slate-600 dark:fill-slate-300 italic"
+            fontSize="11"
+            fontWeight="600"
+          >
+            x
+          </text>
+          <text
+            x={xPx(0) + 8}
+            y={12}
+            className="fill-slate-600 dark:fill-slate-300 italic"
+            fontSize="11"
+            fontWeight="600"
+          >
+            y
+          </text>
           {/* Área */}
           <path d={areaPath} className="fill-rose-500/30 stroke-rose-500" strokeWidth={1} />
           {/* Curva */}

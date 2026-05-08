@@ -31,6 +31,49 @@ export default function CirculoTrig() {
           {/* Ejes */}
           <line x1={0} y1={cy} x2={size} y2={cy} className="stroke-slate-400" strokeWidth={1} />
           <line x1={cx} y1={0} x2={cx} y2={size} className="stroke-slate-400" strokeWidth={1} />
+          {/* Etiquetas numéricas (unidad ±1) */}
+          {[-1, 1].map((v) => (
+            <g key={`tick-${v}`}>
+              <text
+                x={cx + v * r}
+                y={cy + 12}
+                textAnchor="middle"
+                className="fill-slate-500 dark:fill-slate-400"
+                fontSize="9"
+              >
+                {v}
+              </text>
+              <text
+                x={cx - 6}
+                y={cy - v * r + 3}
+                textAnchor="end"
+                className="fill-slate-500 dark:fill-slate-400"
+                fontSize="9"
+              >
+                {v}
+              </text>
+            </g>
+          ))}
+          {/* Letras de los ejes */}
+          <text
+            x={size - 4}
+            y={cy - 6}
+            textAnchor="end"
+            className="fill-slate-600 dark:fill-slate-300 italic"
+            fontSize="11"
+            fontWeight="600"
+          >
+            x
+          </text>
+          <text
+            x={cx + 8}
+            y={12}
+            className="fill-slate-600 dark:fill-slate-300 italic"
+            fontSize="11"
+            fontWeight="600"
+          >
+            y
+          </text>
           {/* Circunferencia unitaria */}
           <circle cx={cx} cy={cy} r={r} fill="none" className="stroke-fuchsia-500" strokeWidth={1.5} />
           {/* Radio al ángulo */}
