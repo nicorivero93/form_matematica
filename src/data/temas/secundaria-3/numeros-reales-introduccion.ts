@@ -37,6 +37,29 @@ export const NUMEROS_REALES_INTRODUCCION: Tema = {
       ],
       resultado: 'Todos son reales; sólo $\\sqrt{2}$ y $\\pi$ son irracionales.',
     },
+    {
+      titulo: 'Ubicar $\\sqrt{2}$ en la recta numérica',
+      enunciado:
+        '¿Cómo se marca exactamente $\\sqrt{2}$ en la recta usando regla y compás? (Mirá el visualizador de abajo y movés el slider para ver el barrido del compás).',
+      pasos: [
+        { explicacion: 'Marcamos el segmento de 0 a 1 sobre la recta.' },
+        { explicacion: 'Levantamos un cuadrado de lado 1 apoyado en ese segmento.' },
+        {
+          explicacion: 'Por Pitágoras, la diagonal del cuadrado mide:',
+          latex: '\\sqrt{1^2 + 1^2} = \\sqrt{2}',
+        },
+        {
+          explicacion:
+            'Apoyamos el compás en el 0 con abertura igual a esa diagonal.',
+        },
+        {
+          explicacion:
+            'Giramos el compás hasta que el arco caiga sobre la recta. Ese punto es $\\sqrt{2}$.',
+        },
+      ],
+      resultado:
+        '$\\sqrt{2}$ queda entre 1 y 2, más cerca del 1 (a $\\approx 1{,}414$). Es un punto exacto, aunque su escritura decimal sea infinita.',
+    },
   ],
   erroresComunes: [
     'Pensar que los decimales periódicos son irracionales (son racionales).',
@@ -66,6 +89,7 @@ export const NUMEROS_REALES_INTRODUCCION: Tema = {
       },
     ],
   },
+  visualizadorId: 'construir-raiz-dos',
   relacionados: ['racionales-introduccion', 'raices-cuadradas'],
   tags: ['reales', 'irracionales', 'racionales', 'conjuntos numericos'],
 };
