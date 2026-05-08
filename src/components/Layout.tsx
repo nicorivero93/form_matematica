@@ -6,6 +6,8 @@ import { TemaToggle } from './TemaToggle';
 import { BuscadorOverlay } from './buscador/BuscadorOverlay';
 import { useAtajoBuscador } from './buscador/AtajoBuscador';
 import { useBuscadorAbierto } from '@/store/buscadorAbierto';
+import { WhatsAppFAB } from './WhatsAppFAB';
+import { FeedbackWidget } from './FeedbackWidget';
 
 export function Layout() {
   useAtajoBuscador();
@@ -66,6 +68,8 @@ export function Layout() {
       <Footer />
       <BottomNav />
       <BuscadorOverlay />
+      <FeedbackWidget />
+      <WhatsAppFAB />
     </div>
   );
 }
