@@ -79,6 +79,7 @@ export const SISTEMAS_ECUACIONES: Tema = {
       },
     ],
   },
-  relacionados: ['ecuaciones-primer-grado', 'funcion-lineal-completa'],
+  visualizadorId: 'sistema-grafico',
+  relacionados: ['sistemas-ecuaciones-grafico', 'ecuaciones-primer-grado', 'funcion-lineal-completa'],
   tags: ['sistemas', 'ecuaciones', 'sustitucion', 'eliminacion'],
 };
