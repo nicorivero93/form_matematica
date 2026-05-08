@@ -66,6 +66,7 @@ export const FUNCION_CUADRATICA_GRAFICO: Tema = {
       },
     ],
   },
+  visualizadorId: 'graficador-cuadratica',
   relacionados: ['funcion-cuadratica-introduccion'],
   tags: ['cuadratica', 'parabola', 'vertice', 'eje de simetria'],
 };

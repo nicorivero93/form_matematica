@@ -68,6 +68,7 @@ export const TRIGONOMETRIA_APLICACIONES: Tema = {
       },
     ],
   },
+  visualizadorId: 'circulo-trig',
   relacionados: ['razones-trigonometricas', 'teorema-pitagoras'],
   tags: ['trigonometria', 'aplicaciones', 'angulos', 'lados'],
 };

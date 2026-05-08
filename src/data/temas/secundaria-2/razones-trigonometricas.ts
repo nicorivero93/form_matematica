@@ -68,6 +68,7 @@ export const RAZONES_TRIGONOMETRICAS: Tema = {
       },
     ],
   },
+  visualizadorId: 'circulo-trig',
   relacionados: ['teorema-pitagoras', 'triangulos-clasificacion'],
   tags: ['trigonometria', 'seno', 'coseno', 'tangente'],
 };

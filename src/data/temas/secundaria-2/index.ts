@@ -27,6 +27,11 @@ import { TRIGONOMETRIA_APLICACIONES } from './trigonometria-aplicaciones';
 import { INTERES_COMPUESTO_INTRO } from './interes-compuesto-intro';
 import { ESTADISTICA_DISPERSION } from './estadistica-dispersion';
 import { PROBABILIDAD_CONDICIONAL } from './probabilidad-condicional';
+import { SISTEMAS_ECUACIONES_GRAFICO } from './sistemas-ecuaciones-grafico';
+import { DIFERENCIA_CUADRADOS } from './diferencia-cuadrados';
+import { TRINOMIO_CUADRADO_PERFECTO } from './trinomio-cuadrado-perfecto';
+import { RESOLVER_TRIANGULOS_RECTANGULOS } from './resolver-triangulos-rectangulos';
+import { PITAGORAS_CUERPOS_3D } from './pitagoras-cuerpos-3d';
 
 export const SECUNDARIA_2: Tema[] = [
   FUNCION_LINEAL_COMPLETA,
@@ -57,4 +62,9 @@ export const SECUNDARIA_2: Tema[] = [
   INTERES_COMPUESTO_INTRO,
   ESTADISTICA_DISPERSION,
   PROBABILIDAD_CONDICIONAL,
+  SISTEMAS_ECUACIONES_GRAFICO,
+  DIFERENCIA_CUADRADOS,
+  TRINOMIO_CUADRADO_PERFECTO,
+  RESOLVER_TRIANGULOS_RECTANGULOS,
+  PITAGORAS_CUERPOS_3D,
 ];

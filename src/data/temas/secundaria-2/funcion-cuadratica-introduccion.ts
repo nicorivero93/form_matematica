@@ -77,6 +77,7 @@ export const FUNCION_CUADRATICA_INTRODUCCION: Tema = {
       },
     ],
   },
+  visualizadorId: 'graficador-cuadratica',
   relacionados: ['funcion-lineal-completa', 'productos-notables'],
   tags: ['cuadratica', 'parabola', 'funciones'],
 };
