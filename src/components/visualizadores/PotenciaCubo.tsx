@@ -88,7 +88,7 @@ function Grid({ n }: { n: number }) {
     }
   }
   return (
-    <svg viewBox={`0 0 ${size} ${size}`} className="max-w-[200px]" role="img" aria-label={`Cuadrado de ${n} por ${n}`}>
+    <svg viewBox={`0 0 ${size} ${size}`} className="w-full max-w-[320px]" role="img" aria-label={`Cuadrado de ${n} por ${n}`}>
       {cells}
     </svg>
   );
@@ -150,7 +150,7 @@ function CuboIso({ n }: { n: number }) {
   }
 
   return (
-    <svg viewBox={`0 0 ${totalW} ${totalH}`} className="max-w-[260px]" role="img" aria-label={`Cubo de lado ${n}`}>
+    <svg viewBox={`0 0 ${totalW} ${totalH}`} className="w-full max-w-[400px]" role="img" aria-label={`Cubo de lado ${n}`}>
       <path d={path(top)} className="fill-indigo-500/20 stroke-indigo-500" strokeWidth={1.5} />
       <path d={path(right)} className="fill-indigo-500/30 stroke-indigo-500" strokeWidth={1.5} />
       <path d={path(front)} className="fill-indigo-500/40 stroke-indigo-500" strokeWidth={1.5} />

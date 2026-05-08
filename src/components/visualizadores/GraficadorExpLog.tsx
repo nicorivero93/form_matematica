@@ -39,7 +39,7 @@ export default function GraficadorExpLog() {
       </div>
 
       <div className="flex justify-center">
-        <svg viewBox={`0 0 ${size} ${size}`} className="w-full max-w-[320px]">
+        <svg viewBox={`0 0 ${size} ${size}`} className="w-full max-w-[540px]">
           {Array.from({ length: max - min + 1 }, (_, i) => i + min).map((v) => (
             <g key={v}>
               <line x1={xPx(v)} y1={0} x2={xPx(v)} y2={size} className="stroke-slate-200 dark:stroke-slate-700" strokeWidth={0.5} />

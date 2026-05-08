@@ -35,7 +35,7 @@ export default function PlanoCartesiano() {
       <div className="flex justify-center">
         <svg
           viewBox={`0 0 ${size} ${size}`}
-          className="w-full max-w-[320px] cursor-crosshair touch-none"
+          className="w-full max-w-[540px] cursor-crosshair touch-none"
           onClick={onClickSvg}
           role="img"
           aria-label={`Plano cartesiano con punto en ${punto.x}, ${punto.y}`}

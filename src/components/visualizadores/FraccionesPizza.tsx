@@ -63,7 +63,7 @@ function Pizza({ partes, pintadas }: { partes: number; pintadas: number }) {
   // Caso especial: 1 parte completa
   if (partes === 1) {
     return (
-      <svg viewBox="0 0 200 200" className="w-56 h-56" role="img" aria-label={`Pizza completa, ${pintadas} de 1 partes pintadas`}>
+      <svg viewBox="0 0 200 200" className="w-72 h-72 sm:w-80 sm:h-80" role="img" aria-label={`Pizza completa, ${pintadas} de 1 partes pintadas`}>
         <circle
           cx={cx}
           cy={cy}
@@ -90,7 +90,7 @@ function Pizza({ partes, pintadas }: { partes: number; pintadas: number }) {
   });
 
   return (
-    <svg viewBox="0 0 200 200" className="w-56 h-56" role="img" aria-label={`Pizza con ${partes} partes, ${pintadas} pintadas`}>
+    <svg viewBox="0 0 200 200" className="w-72 h-72 sm:w-80 sm:h-80" role="img" aria-label={`Pizza con ${partes} partes, ${pintadas} pintadas`}>
       {slices.map((s, i) => (
         <path
           key={i}

@@ -39,7 +39,7 @@ export default function GraficadorCuadratica() {
       </div>
 
       <div className="flex justify-center">
-        <svg viewBox={`0 0 ${size} ${size}`} className="w-full max-w-[320px]" role="img" aria-label="Gráfico parábola">
+        <svg viewBox={`0 0 ${size} ${size}`} className="w-full max-w-[540px]" role="img" aria-label="Gráfico parábola">
           {/* Grilla */}
           {Array.from({ length: max - min + 1 }, (_, i) => i + min).map((v) => (
             <g key={v}>

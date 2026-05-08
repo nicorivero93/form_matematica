@@ -32,7 +32,7 @@ export default function GraficadorLineal() {
       <div className="flex justify-center">
         <svg
           viewBox={`0 0 ${size} ${size}`}
-          className="w-full max-w-[320px]"
+          className="w-full max-w-[540px]"
           role="img"
           aria-label={`Gráfico de y = ${m}x + ${b}`}
         >

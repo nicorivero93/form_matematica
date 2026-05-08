@@ -27,7 +27,7 @@ export default function CirculoTrig() {
       </div>
 
       <div className="flex justify-center">
-        <svg viewBox={`0 0 ${size} ${size}`} className="w-full max-w-[280px]" role="img" aria-label={`Círculo trigonométrico a ${angulo}°`}>
+        <svg viewBox={`0 0 ${size} ${size}`} className="w-full max-w-[480px]" role="img" aria-label={`Círculo trigonométrico a ${angulo}°`}>
           {/* Ejes */}
           <line x1={0} y1={cy} x2={size} y2={cy} className="stroke-slate-400" strokeWidth={1} />
           <line x1={cx} y1={0} x2={cx} y2={size} className="stroke-slate-400" strokeWidth={1} />

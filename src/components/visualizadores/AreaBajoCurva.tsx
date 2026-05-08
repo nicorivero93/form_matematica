@@ -47,7 +47,7 @@ export default function AreaBajoCurva() {
       </div>
 
       <div className="flex justify-center">
-        <svg viewBox={`0 0 ${size} ${size}`} className="w-full max-w-[320px]">
+        <svg viewBox={`0 0 ${size} ${size}`} className="w-full max-w-[540px]">
           {/* Grilla */}
           <line x1={xPx(min)} y1={yPx(0)} x2={xPx(max)} y2={yPx(0)} className="stroke-slate-500" strokeWidth={1.5} />
           <line x1={xPx(0)} y1={yPx(yMin)} x2={xPx(0)} y2={yPx(yMax)} className="stroke-slate-500" strokeWidth={1.5} />
