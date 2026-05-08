@@ -27,10 +27,10 @@ export default function ConstruirRaiz() {
 
   // ViewBox y mapeo: 1 unidad matemática = 60 px (más grande para legibilidad).
   const escala = 60;
-  const offsetX = 30;
-  const offsetY = 270;
-  const ancho = 520;
-  const alto = 320;
+  const offsetX = 50;
+  const offsetY = 250;
+  const ancho = 540;
+  const alto = 360;
   const xPx = (x: number) => offsetX + x * escala;
   const yPx = (y: number) => offsetY - y * escala;
 
@@ -133,7 +133,7 @@ export default function ConstruirRaiz() {
       <div className="flex justify-center">
         <svg
           viewBox={`0 0 ${ancho} ${alto}`}
-          className="w-full max-w-[640px]"
+          className="w-full max-w-[720px]"
           role="img"
           aria-label={`Construcción de raíz de ${valorN}, modo ${modo}, barrido al ${Math.round(t * 100)}%`}
         >
@@ -148,7 +148,7 @@ export default function ConstruirRaiz() {
 
           {/* Recta numérica */}
           <line
-            x1={xPx(-0.3)}
+            x1={xPx(-0.5)}
             y1={yPx(0)}
             x2={xPx(8.0)}
             y2={yPx(0)}
@@ -185,25 +185,36 @@ export default function ConstruirRaiz() {
             </g>
           ))}
 
-          {/* Marcas de raíces previas (modo cadena) — alternan arriba/abajo para evitar solape */}
+          {/* Marcas de raíces previas (modo cadena) — 3 carriles abajo + leader lines */}
           {raicesPrevias.map((rp, i) => {
-            const arriba = i % 2 === 0;
+            const carril = i % 3;
+            const yLabel = yPx(0) + 22 + carril * 16; // carriles a y+22, y+38, y+54
             return (
               <g key={`prev-${rp.label}`}>
                 <line
                   x1={xPx(rp.valor)}
-                  y1={yPx(0) - (arriba ? 6 : 0)}
+                  y1={yPx(0) - 4}
                   x2={xPx(rp.valor)}
-                  y2={yPx(0) + (arriba ? 0 : 6)}
+                  y2={yPx(0) + 4}
                   className="stroke-teal-500/60"
                   strokeWidth={1.5}
                 />
+                {/* Leader line del eje al label */}
+                <line
+                  x1={xPx(rp.valor)}
+                  y1={yPx(0) + 6}
+                  x2={xPx(rp.valor)}
+                  y2={yLabel - 9}
+                  className="stroke-teal-500/30"
+                  strokeWidth={0.8}
+                  strokeDasharray="1 2"
+                />
                 <text
                   x={xPx(rp.valor)}
-                  y={arriba ? yPx(0) - 10 : yPx(0) + 18}
+                  y={yLabel}
                   textAnchor="middle"
-                  className="fill-teal-600/80 dark:fill-teal-300/80"
-                  fontSize="11"
+                  className="fill-teal-600/85 dark:fill-teal-300/85"
+                  fontSize="12"
                 >
                   {rp.label}
                 </text>
@@ -214,22 +225,32 @@ export default function ConstruirRaiz() {
           {/* Marca de la raíz actual */}
           <line
             x1={xPx(raiz)}
-            y1={yPx(0) - 7}
+            y1={yPx(0) - 8}
             x2={xPx(raiz)}
-            y2={yPx(0) + 7}
+            y2={yPx(0) + 8}
             className={aterrizo ? 'stroke-teal-500' : 'stroke-teal-400/50'}
-            strokeWidth={2.5}
+            strokeWidth={3}
+          />
+          {/* Leader line del eje al label de raíz actual (carril 4, más abajo) */}
+          <line
+            x1={xPx(raiz)}
+            y1={yPx(0) + 10}
+            x2={xPx(raiz)}
+            y2={yPx(0) + 73}
+            className={aterrizo ? 'stroke-teal-500/60' : 'stroke-teal-400/30'}
+            strokeWidth={0.8}
+            strokeDasharray="1 2"
           />
           <text
             x={xPx(raiz)}
-            y={yPx(0) + 40}
+            y={yPx(0) + 84}
             textAnchor="middle"
             className={
               aterrizo
-                ? 'fill-teal-600 dark:fill-teal-300 font-semibold'
-                : 'fill-teal-500/60 dark:fill-teal-400/60'
+                ? 'fill-teal-600 dark:fill-teal-300 font-bold'
+                : 'fill-teal-500/70 dark:fill-teal-400/70'
             }
-            fontSize="13"
+            fontSize="14"
           >
             √{valorN} {raizLabel}
           </text>
@@ -281,10 +302,10 @@ export default function ConstruirRaiz() {
             strokeWidth={3}
             strokeLinecap="round"
           />
-          {/* Etiqueta √n sobre la hipotenusa */}
+          {/* Etiqueta √n sobre la hipotenusa (a 1/3 desde el origen para no chocar con el círculo extremo) */}
           <text
-            x={xPx(puntoX / 2) + 8}
-            y={yPx(puntoY / 2) - 6}
+            x={xPx(puntoX / 3) + 8}
+            y={yPx(puntoY / 3) - 6}
             className="fill-teal-700 dark:fill-teal-300 font-semibold italic"
             fontSize="13"
           >
@@ -316,9 +337,9 @@ export default function ConstruirRaiz() {
           <circle
             cx={xPx(puntoX)}
             cy={yPx(puntoY)}
-            r={8}
+            r={6}
             className="fill-teal-500 stroke-white dark:stroke-slate-900"
-            strokeWidth={2.5}
+            strokeWidth={2}
           />
 
           {/* Centro de rotación en el 0 */}
