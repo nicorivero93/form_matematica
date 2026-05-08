@@ -20,7 +20,7 @@ const visualizadores: Record<string, LazyExoticComponent<ComponentType>> = {
   'circulo-trig': lazy(() => import('./CirculoTrig')),
   'graficador-exp-log': lazy(() => import('./GraficadorExpLog')),
   'area-bajo-curva': lazy(() => import('./AreaBajoCurva')),
-  'construir-raiz-dos': lazy(() => import('./ConstruirRaizDos')),
+  'construir-raiz': lazy(() => import('./ConstruirRaiz')),
 };
 
 export function VisualizadorPorId({ id }: { id: string }) {

@@ -38,27 +38,37 @@ export const NUMEROS_REALES_INTRODUCCION: Tema = {
       resultado: 'Todos son reales; sólo $\\sqrt{2}$ y $\\pi$ son irracionales.',
     },
     {
-      titulo: 'Ubicar $\\sqrt{2}$ en la recta numérica',
+      titulo: 'Ubicar $\\sqrt{n}$ en la recta numérica con regla y compás',
       enunciado:
-        '¿Cómo se marca exactamente $\\sqrt{2}$ en la recta usando regla y compás? (Mirá el visualizador de abajo y movés el slider para ver el barrido del compás).',
+        'Hay dos formas de construir $\\sqrt{n}$ exacto sobre la recta. Probá las dos en el visualizador de abajo y movés el slider para trasladar la hipotenusa.',
       pasos: [
-        { explicacion: 'Marcamos el segmento de 0 a 1 sobre la recta.' },
-        { explicacion: 'Levantamos un cuadrado de lado 1 apoyado en ese segmento.' },
         {
-          explicacion: 'Por Pitágoras, la diagonal del cuadrado mide:',
-          latex: '\\sqrt{1^2 + 1^2} = \\sqrt{2}',
+          explicacion:
+            '**Modo directo (catetos enteros).** Si podemos escribir $n = a^2 + b^2$ con $a, b$ enteros, la diagonal de un rectángulo $a \\times b$ mide $\\sqrt{n}$.',
+        },
+        {
+          explicacion: 'Por Pitágoras:',
+          latex: '\\sqrt{a^2 + b^2}',
         },
         {
           explicacion:
-            'Apoyamos el compás en el 0 con abertura igual a esa diagonal.',
+            'Ejemplos: $(1,1) \\to \\sqrt{2}$; $(2,1) \\to \\sqrt{5}$; $(3,2) \\to \\sqrt{13}$; $(4,3) \\to \\sqrt{25} = 5$.',
         },
         {
           explicacion:
-            'Giramos el compás hasta que el arco caiga sobre la recta. Ese punto es $\\sqrt{2}$.',
+            '**Modo cadena (Teodoro).** Para $\\sqrt{3}, \\sqrt{6}, \\sqrt{7}$… que no se escriben como $a^2 + b^2$ con enteros, se usa la raíz anterior como cateto.',
+        },
+        {
+          explicacion: 'Ejemplo: con cateto $\\sqrt{2}$ (ya construido) y cateto $1$:',
+          latex: '\\sqrt{(\\sqrt{2})^2 + 1^2} = \\sqrt{2 + 1} = \\sqrt{3}',
+        },
+        {
+          explicacion:
+            'Encadenando: $\\sqrt{2} \\to \\sqrt{3} \\to \\sqrt{4} = 2 \\to \\sqrt{5} \\to \\dots$ Cada raíz se apoya en la anterior y se traslada con compás a la recta.',
         },
       ],
       resultado:
-        '$\\sqrt{2}$ queda entre 1 y 2, más cerca del 1 (a $\\approx 1{,}414$). Es un punto exacto, aunque su escritura decimal sea infinita.',
+        'Cualquier $\\sqrt{n}$ con $n$ entero positivo queda ubicado de forma exacta en la recta, aunque su escritura decimal sea infinita.',
     },
   ],
   erroresComunes: [
@@ -89,7 +99,7 @@ export const NUMEROS_REALES_INTRODUCCION: Tema = {
       },
     ],
   },
-  visualizadorId: 'construir-raiz-dos',
+  visualizadorId: 'construir-raiz',
   relacionados: ['racionales-introduccion', 'raices-cuadradas'],
   tags: ['reales', 'irracionales', 'racionales', 'conjuntos numericos'],
 };
